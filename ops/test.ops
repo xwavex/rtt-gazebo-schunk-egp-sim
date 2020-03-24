@@ -1,0 +1,16 @@
+import("rtt_gazebo_embedded")
+import("rtt-gazebo-schunk-egp-sim")
+import("eigen_typekit")
+import("kdl_typekit")
+import("rst-rt_typekit")
+
+loadComponent("gazebo","RTTGazeboEmbedded");
+setActivity("gazebo",0,10,ORO_SCHED_OTHER);
+gazebo.configure()
+gazebo.start()
+
+gazebo.spawn_model_at_pos("schunk-egp-40", "model://schunk-egp-40", 0, 0, 0);
+
+loadComponent("schunk1", "cosima::SchunkEgpSim")
+schunk1.getModel("schunk-egp-40")
+schunk1.configure()

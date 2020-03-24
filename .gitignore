@@ -1,0 +1,8 @@
+.vscode/
+build/
+*~
+*.txt
+!CMakeLists.txt
+*.log
+.project
+.cproject
