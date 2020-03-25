@@ -9,8 +9,11 @@ setActivity("gazebo",0,10,ORO_SCHED_OTHER);
 gazebo.configure()
 gazebo.start()
 
-gazebo.spawn_model_at_pos("schunk-egp-40", "model://schunk-egp-40", 0, 0, 0);
+# gazebo.spawn_model_at_pos("schunk-egp-40", "model://schunk-egp-40", 0, 0, 0);
+# gazebo.spawn_model_at_pos("kuka-iiwa-7", "model://kuka-iiwa-7", 0, 0, 0);
+gazebo.spawn_model_at_pos("kuka-iiwa-7-schunk-egp-40", "model://kuka-iiwa-7-schunk-egp-40", 0, 0, 0);
 
 loadComponent("schunk1", "cosima::SchunkEgpSim")
-schunk1.getModel("schunk-egp-40")
+schunk1.getModel("kuka-iiwa-7-schunk-egp-40")
 schunk1.configure()
+
